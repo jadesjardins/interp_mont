@@ -26,7 +26,7 @@
 % Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 
-function EEG = interpref(EEG,coord_fname,varargin)
+function EEG = interp_ref(EEG,coord_fname,varargin)
 
 % INITIATE VARARGIN STRUCTURES...
 try

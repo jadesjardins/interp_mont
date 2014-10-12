@@ -1,7 +1,7 @@
-% pop_interpref() - collects inputs for interpref.
+% pop_interp_ref() - collects inputs for interpref.
 %
 % Usage:
-%   >>  com= pop_interpref(EEG, coordfname, optstr);
+%   >>  com= pop_interp_ref(EEG, coordfname, optstr);
 %
 % Inputs:
 %   EEG         - input EEG structure
@@ -35,7 +35,7 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-function [EEG com] = pop_interpref(EEG, coordfname, varargin)
+function [EEG com] = pop_interp_ref(EEG, coordfname, varargin)
 
 g = struct(varargin{:});
 
@@ -89,18 +89,18 @@ end;
 % -------------------------
 
 if isempty(optstr);
-    com = sprintf('EEG = pop_interpref( %s, ''%s'');', inputname(1), coordfname);
+    com = sprintf('EEG = pop_interp_ref( %s, ''%s'');', inputname(1), coordfname);
 else
-    com = sprintf('EEG = pop_interpref( %s, ''%s'', %s);', inputname(1), coordfname, optstr);
+    com = sprintf('EEG = pop_interp_ref( %s, ''%s'', %s);', inputname(1), coordfname, optstr);
 end
 
 % call function sample either on raw data or ICA data
 % ---------------------------------------------------
 
 if isempty(optstr);
-    execcom = sprintf('EEG = intrperef( %s, ''%s'');', inputname(1), coordfname);
+    execcom = sprintf('EEG = interp_ref( %s, ''%s'');', inputname(1), coordfname);
 else
-    execcom = sprintf('EEG = intrperef( %s, ''%s'', %s);', inputname(1), coordfname, optstr);
+    execcom = sprintf('EEG = interp_ref( %s, ''%s'', %s);', inputname(1), coordfname, optstr);
 end
 
 eval(execcom);

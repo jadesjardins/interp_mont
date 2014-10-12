@@ -1,8 +1,8 @@
-% eegplugin_intrpmont() - EEGLAB plugin for interpolating data to locations
+% eegplugin_interp_mont() - EEGLAB plugin for interpolating data to locations
 %                       found in coordinate file recognized by readlocs.
 %
 % Usage:
-%   >> eegplugin_intrpmont(fig, try_strings, catch_stringss);
+%   >> eegplugin_interp_mont(fig, try_strings, catch_stringss);
 %
 % Inputs:
 %   fig            - [integer]  EEGLAB figure
@@ -29,22 +29,22 @@
 
 % $Log: eegplugin_intrpmont.m
 
-function eegplugin_interpmont(fig,try_strings,catch_strings)
+function eegplugin_interp_mont(fig,try_strings,catch_strings)
 
 
 % Find "Tools" menu.
 toolsmenu=findobj(fig,'label','Tools');
 
 % Create cmd for warping chanlocs structure to corrdinate file location.
-cmd='[EEG LASTCOM] = pop_warplocs( EEG );';
+cmd='[EEG LASTCOM] = pop_warp_locs( EEG );';
 finalcmdwl=[try_strings.no_check cmd catch_strings.store_and_hist];
 
 % Create cmd for interpolating currentlocations to sites in coordinate file.
-cmd='[EEG LASTCOM] = pop_interpmont( EEG );';
+cmd='[EEG LASTCOM] = pop_interp_mont( EEG );';
 finalcmdim=[try_strings.no_check cmd catch_strings.store_and_hist];
 
 % Create cmd for rereferencing current data to the average of sites from a coordinate file.
-cmd='[EEG LASTCOM] = pop_interpref( EEG );';
+cmd='[EEG LASTCOM] = pop_interp_ref( EEG );';
 finalcmdir=[try_strings.no_check cmd catch_strings.store_and_hist];
 
 % add "interpolate to coordinate file" submenu to "Tools" menu.

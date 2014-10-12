@@ -1,4 +1,4 @@
-% EEG = pop_interpmont() - Collect inputs for intrpmont. Interpolate current
+% EEG = pop_interp_mont() - Collect inputs for intrpmont. Interpolate current
 %      data to coordinates from a specified coordinate file.
 %
 % Usage:
@@ -37,7 +37,7 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-function [EEG com] = pop_interpmont(EEG, coordfname, varargin)
+function [EEG com] = pop_interp_mont(EEG, coordfname, varargin)
 
 g = struct(varargin{:});
 
@@ -91,18 +91,18 @@ end;
 % -------------------------
 
 if isempty(optstr);
-    com = sprintf('EEG = pop_interpmont( %s, ''%s'');', inputname(1), coordfname)
+    com = sprintf('EEG = pop_interp_mont( %s, ''%s'');', inputname(1), coordfname)
 else
-    com = sprintf('EEG = pop_interpmont( %s, ''%s'', %s);', inputname(1), coordfname, optstr)
+    com = sprintf('EEG = pop_interp_mont( %s, ''%s'', %s);', inputname(1), coordfname, optstr)
 end
 
 % call function sample either on raw data or ICA data
 % ---------------------------------------------------
 
 if isempty(optstr);
-    execcom = sprintf('EEG = interpmont( %s, ''%s'');', inputname(1), coordfname);
+    execcom = sprintf('EEG = interp_mont( %s, ''%s'');', inputname(1), coordfname);
 else
-    execcom = sprintf('EEG = interpmont( %s, ''%s'', %s);', inputname(1), coordfname, optstr);
+    execcom = sprintf('EEG = interp_mont( %s, ''%s'', %s);', inputname(1), coordfname, optstr);
 end
 
 eval(execcom);

@@ -1,8 +1,8 @@
-% EEG = interpmont() - Interpolate current data to coordinates from a specified
+% EEG = interp_mont() - Interpolate current data to coordinates from a specified
 %               sfp file.
 %
 % Usage:
-%   >>  com= interpmont(EEG, coordfname, varargin);
+%   >>  com= interp_mont(EEG, coordfname, varargin);
 %
 % Inputs:
 %   EEG         - input EEG structure
@@ -37,7 +37,7 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-function EEG = interpmont(EEG,coordfname,varargin)
+function EEG = interp_mont(EEG,coordfname,varargin)
 
 
 % Handle optional inputs.
